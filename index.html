@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ネットで優待 ご提案資料 | 宝印刷</title>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --red:     #C8102E;
+  --red-dk:  #D32A4C;
+  --red-dk2: #D82D4C;
+  --red-lt:  #f9e8eb;
+  --grn:     #049944;
+  --grn-lt:  #e8f7ee;
+  --grn-bd:  #7ecda0;
+  --gray:    #f5f5f5;
+  --gray2:   #e8e8e8;
+  --dark:    #222222;
+  --mid:     #555555;
+  --light:   #888888;
+  --white:   #ffffff;
+}
+body {
+  font-family: 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif;
+  background: var(--white); color: var(--dark);
+  line-height: 1.55; font-size: 14px;
+}
+
+/* ===== HEADER ===== */
+.header-hero {
+  background: var(--white); padding: 20px 24px 18px;
+  text-align: center; border-bottom: 3px solid var(--red);
+}
+.header-logo-wrap { margin-bottom: 12px; }
+.header-logo-wrap img { max-width: 240px; width: 60%; height: auto; display: block; margin: 0 auto; }
+
+.header-tagline {
+  font-size: clamp(16px, 3.8vw, 22px); font-weight: 900;
+  color: var(--dark); line-height: 1.45;
+}
+.header-tagline em { font-style: normal; color: var(--red); border-bottom: 2px solid var(--red); padding-bottom: 1px; }
+
+/* ===== SCENE SELECTOR ===== */
+.scene-section {
+  background: var(--white); border-bottom: 3px solid var(--red);
+  position: sticky; top: 0; z-index: 100;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.10);
+}
+.scene-prompt {
+  background: var(--gray); border-bottom: 1px solid var(--gray2);
+  text-align: center; padding: 5px 16px;
+  font-size: 10px; color: var(--mid); font-weight: 700; letter-spacing: 0.08em;
+}
+.scene-tabs { display: flex; padding: 8px 14px 10px; gap: 8px; justify-content: center; }
+.scene-tab {
+  flex: 1; max-width: 220px;
+  background: var(--gray); border: 2px solid var(--gray2);
+  border-radius: 4px; padding: 8px 10px;
+  font-size: 12px; font-weight: 700; color: var(--mid);
+  cursor: pointer; transition: all 0.18s;
+  text-align: center; line-height: 1.4; font-family: inherit;
+}
+.scene-tab:hover { border-color: var(--red); color: var(--red); background: var(--red-lt); }
+.scene-tab.active {
+  background: var(--red); border-color: var(--red); color: var(--white);
+  box-shadow: 0 3px 10px rgba(200,16,46,0.28);
+}
+
+/* ===== CONTAINER ===== */
+.container { max-width: 760px; margin: 0 auto; padding: 0 16px 40px; }
+
+/* ===== SCENARIO PANELS ===== */
+.scenario-panel { display: none; }
+.scenario-panel.active { display: block; animation: fadeUp 0.24s ease; }
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ===== SCENARIO HERO ===== */
+.sc-hero {
+  margin: 16px 0 18px;
+  border-left: 5px solid var(--red);
+  background: var(--gray); border-radius: 0 6px 6px 0;
+  padding: 14px 18px;
+}
+.sc-badge {
+  font-size: 10px; font-weight: 800; letter-spacing: 0.1em;
+  color: var(--red); border: 1px solid var(--red);
+  display: inline-block; padding: 2px 10px; margin-bottom: 6px; border-radius: 2px;
+}
+.sc-hero h2 { font-size: clamp(14px, 3.5vw, 18px); font-weight: 900; color: var(--dark); line-height: 1.4; }
+.sc-hero h2 em { font-style: normal; color: var(--red); }
+
+/* ===== STEP LABEL ===== */
+.step-label {
+  margin: 20px 0 10px;
+  padding: 9px 14px;
+  text-align: center;
+}
+.step-label .sl-title {
+  font-size: clamp(13px, 3.2vw, 16px); font-weight: 900; color: var(--dark); line-height: 1.3;
+}
+
+/* ===== ① CHALLENGE BOXES ===== */
+.challenge-boxes {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 8px; margin-bottom: 4px;
+}
+.challenge-box {
+  background: var(--gray); border: 1.5px solid var(--gray2);
+  border-top: 4px solid #aaaaaa; border-radius: 4px;
+  padding: 12px 10px; text-align: center;
+}
+.challenge-box .cb-mark {
+  font-size: 22px; font-weight: 900; display: block;
+  color: var(--mid); margin-bottom: 6px; line-height: 1;
+}
+.challenge-box .cb-title { font-size: 11px; font-weight: 800; color: var(--dark); margin-bottom: 3px; line-height: 1.4; }
+.challenge-box .cb-desc  { font-size: 10px; color: var(--mid); line-height: 1.45; }
+
+/* ===== ② EFFECT BOXES ===== */
+.effect-boxes {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  gap: 8px; margin-bottom: 4px;
+}
+.effect-box {
+  background: var(--grn-lt); border: 1.5px solid var(--grn-bd);
+  border-top: 4px solid var(--grn); border-radius: 4px;
+  padding: 12px 10px; text-align: center;
+}
+.effect-box .eb-mark {
+  font-size: 22px; font-weight: 900; display: block;
+  color: var(--grn); margin-bottom: 6px; line-height: 1;
+}
+.effect-box .eb-title { font-size: 11px; font-weight: 800; color: var(--grn); margin-bottom: 3px; line-height: 1.4; }
+.effect-box .eb-desc  { font-size: 10px; color: var(--mid); line-height: 1.45; }
+
+/* ===== DIVIDER ===== */
+.sec-div { display: flex; align-items: center; gap: 14px; margin: 26px 0 0; }
+.sec-div::before, .sec-div::after { content: ''; flex: 1; height: 1px; background: var(--gray2); }
+.sec-div-label { font-size: 11px; color: var(--light); letter-spacing: 0.12em; white-space: nowrap; font-weight: 700; }
+
+/* ===== ③ HOW IT WORKS ===== */
+.how-box { background: var(--gray); border: 1px solid var(--gray2); border-radius: 4px; padding: 16px 16px; }
+.how-flow-3 { display: flex; align-items: stretch; gap: 4px; }
+.how-step-3 {
+  flex: 1; background: var(--white); border: 1px solid var(--gray2); border-radius: 4px;
+  padding: 14px 8px; text-align: center;
+  display: flex; flex-direction: column; align-items: center;
+}
+.hs-step {
+  background: var(--grn); color: white;
+  border-radius: 20px; font-size: 10px; font-weight: 900;
+  padding: 3px 10px; margin: 0 auto 8px;
+  display: inline-block; letter-spacing: 0.05em; white-space: nowrap;
+}
+.hs-icon  { font-size: 24px; display: block; margin-bottom: 6px; }
+.hs-label { font-size: 12px; color: var(--dark); line-height: 1.4; font-weight: 700; }
+.hs-sub   { font-size: 10px; color: var(--light); line-height: 1.35; margin-top: 3px; }
+.how-arrow { font-size: 20px; color: var(--grn); flex-shrink: 0; font-weight: 900; align-self: center; padding: 0 2px; }
+.how-note  { font-size: 10px; color: var(--light); text-align: center; margin-top: 10px; }
+
+/* ===== ④ PRODUCT CARDS ===== */
+.product-cards { display: flex; flex-direction: column; gap: 18px; }
+.card-catalog { display: none; order: 3; }
+body.scene-3 .card-catalog { display: block; order: 1; }
+body.scene-3 .card-giftee-box { order: 2; }
+body.scene-3 .card-eraberu-pay { order: 3; }
+
+.product-card {
+  background: var(--white); border: 1px solid var(--gray2);
+  border-radius: 4px; overflow: hidden;
+  box-shadow: 0 1px 5px rgba(0,0,0,0.05);
+}
+.pc-header {
+  padding: 12px 18px; display: flex; align-items: center; gap: 0;
+  border-bottom: 3px solid var(--red); background: var(--gray);
+}
+.pc-type { font-size: 10px; font-weight: 800; letter-spacing: 0.1em; color: var(--red); margin-bottom: 2px; }
+.pc-name { font-size: clamp(15px, 3.2vw, 19px); font-weight: 900; color: var(--dark); }
+
+.pc-img-row { width: 100%; border-bottom: 1px solid var(--gray2); overflow: hidden; }
+.pc-img-row img { width: 100%; height: auto; display: block; }
+
+/* 横2枚並べ：左は全幅、右は中央揃え＋ラベル付き */
+.pc-img-pair {
+  display: grid; grid-template-columns: 1fr 1fr;
+  border-bottom: 1px solid var(--gray2);
+  overflow: hidden; align-items: center;
+}
+.pc-img-pair .img-left {
+  width: 100%; height: 100%;
+  object-fit: cover; display: block;
+  border-right: 1px solid var(--gray2);
+}
+.img-right-wrap {
+  display: flex; flex-direction: column; align-items: center; justify-content: center;
+  padding: 8px 10px; background: var(--white);
+}
+.img-right-label {
+  font-size: 9px; font-weight: 800; letter-spacing: 0.08em;
+  color: var(--light); margin-bottom: 5px; text-align: center;
+}
+.img-right-wrap img { max-width: 96%; height: auto; display: block; }
+.card-eraberu-pay .img-right-wrap { padding: 4px 6px; }
+.card-eraberu-pay .img-right-wrap img { max-width: 100%; width: 100%; }
+.card-catalog .pc-img-pair { align-items: center; }
+.card-catalog .img-left { object-fit: contain; width: 100%; height: auto; max-height: 300px; padding: 8px 6px; }
+.card-catalog .img-right-wrap img { max-height: 300px; max-width: 100%; }
+
+.pc-oneliner {
+  padding: 11px 18px;
+  font-size: 13px; font-weight: 700; color: var(--dark);
+  background: var(--red-lt); border-left: 4px solid var(--red);
+  line-height: 1.5;
+}
+
+/* ===== CTA ===== */
+.cta-box {
+  background: var(--red-dk2); border-radius: 6px; padding: 26px 22px;
+  margin-top: 12px; color: var(--white); position: relative; overflow: hidden;
+}
+.cta-box::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 4px; background: rgba(255,255,255,0.3); }
+.cta-box h2 {
+  font-size: clamp(14px, 3.5vw, 18px); font-weight: 900;
+  margin-bottom: 18px; line-height: 1.7;
+  text-align: center;
+}
+
+.cta-agenda-label {
+  font-size: 10px; font-weight: 800; letter-spacing: 0.1em;
+  color: rgba(255,255,255,0.6); margin-bottom: 10px;
+}
+.cta-agenda-boxes {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 8px; margin-bottom: 18px;
+}
+.cta-ab {
+  background: rgba(255,255,255,0.15); border: 1px solid rgba(255,255,255,0.28);
+  border-radius: 6px; padding: 13px 10px; text-align: center;
+}
+.cta-ab-icon { font-size: 20px; display: block; margin-bottom: 6px; }
+.cta-ab-title { font-size: 11px; font-weight: 800; color: white; line-height: 1.4; }
+
+.cta-contact-box { background: var(--white); border-radius: 4px; padding: 16px 20px; text-align: center; color: var(--dark); }
+.cta-contact-label { font-size: 11px; color: var(--mid); margin-bottom: 8px; font-weight: 600; }
+.cta-contact-main { font-size: 16px; font-weight: 900; color: var(--red-dk); line-height: 1.4; margin-bottom: 4px; }
+.cta-contact-sub { font-size: 10px; color: var(--light); }
+
+/* ===== FOOTER ===== */
+.footer { background: var(--red-dk); border-top: 4px solid rgba(255,255,255,0.2); color: rgba(255,255,255,0.55); text-align: center; padding: 16px 16px; font-size: 10px; line-height: 1.8; }
+.footer-brand { color: rgba(255,255,255,0.85); font-size: 12px; font-weight: 800; letter-spacing: 0.06em; margin-bottom: 6px; }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 520px) {
+  .challenge-boxes, .effect-boxes { grid-template-columns: 1fr; gap: 6px; }
+  .scene-tabs { gap: 6px; }
+  .scene-tab { font-size: 11px; padding: 7px 6px; max-width: none; }
+  .how-flow-3 { flex-direction: column; }
+  .how-arrow { transform: rotate(90deg); align-self: center; }
+  .cta-agenda-boxes { grid-template-columns: 1fr 1fr; }
+  .pc-img-pair { grid-template-columns: 1fr; }
+  .pc-img-pair .img-left { border-right: none; border-bottom: 1px solid var(--gray2); }
+}
+</style>
+</head>
+<body class="scene-1">
+
+<!-- ===== HEADER ===== -->
+<div class="header">
+  <div class="header-hero">
+    <div class="header-logo-wrap">
+      <img src="https://cdn.gcp.giftee.biz/staging/images/uploads/20260426142435767090.png"
+           alt="ネットで優待"
+           onerror="this.style.display='none'">
+    </div>
+    <div class="header-tagline">
+      株主優待をデジタルで。<br>
+      <em>コスト削減</em>と、<em>株主利便性向上</em>を両立
+    </div>
+  </div>
+</div>
+
+<!-- ===== SCENE SELECTOR ===== -->
+<div class="scene-section">
+  <div class="scene-prompt">▼ 貴社の現状に合わせてお選びください</div>
+  <div class="scene-tabs">
+    <button class="scene-tab active" onclick="switchScene(1,this)">優待を新設したい</button>
+    <button class="scene-tab" onclick="switchScene(2,this)">QUOカード等で実施中</button>
+    <button class="scene-tab" onclick="switchScene(3,this)">カタログギフトで実施中</button>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ======================== SCENE 1：新設検討 ======================== -->
+  <div class="scenario-panel active" id="scene-1">
+    <div class="sc-hero">
+      <span class="sc-badge">優待新設を検討中の企業様へ</span>
+      <h2>最初から<em>デジタル</em>で始めれば、無駄なコストゼロでスタートできます。</h2>
+    </div>
+
+    <div class="step-label">      <span class="sl-title">物理商品で始めると...</span>
+    </div>
+    <div class="challenge-boxes">
+      <div class="challenge-box">
+        <span class="cb-mark">✕</span>
+        <div class="cb-title">運営費</div>
+        <div class="cb-desc">初年度から梱包・発送費が発生</div>
+      </div>
+      <div class="challenge-box">
+        <span class="cb-mark">✕</span>
+        <div class="cb-title">在庫リスク</div>
+        <div class="cb-desc">株主増加に伴いリスク増大</div>
+      </div>
+      <div class="challenge-box">
+        <span class="cb-mark">✕</span>
+        <div class="cb-title">クレーム対応工数</div>
+        <div class="cb-desc">紛失・返送のクレーム対応が毎年発生する</div>
+      </div>
+    </div>
+
+    <div class="step-label">      <span class="sl-title">「ネットで優待」で始めると！</span>
+    </div>
+    <div class="effect-boxes">
+      <div class="effect-box">
+        <span class="eb-mark">✓</span>
+        <div class="eb-title">コスト最小化</div>
+        <div class="eb-desc">梱包・発送費を削減</div>
+      </div>
+      <div class="effect-box">
+        <span class="eb-mark">✓</span>
+        <div class="eb-title">在庫リスクなし</div>
+        <div class="eb-desc">株主数分のURLを発行</div>
+      </div>
+      <div class="effect-box">
+        <span class="eb-mark">✓</span>
+        <div class="eb-title">株主満足度向上</div>
+        <div class="eb-desc">好きなものを自分で選べる喜び</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================== SCENE 2：QUOカード ======================== -->
+  <div class="scenario-panel" id="scene-2">
+    <div class="sc-hero">
+      <span class="sc-badge">QUOカード・金券類で実施中の企業様へ</span>
+      <h2><em>「使える場所が限られる」</em>を解消。株主がもっと喜ぶデジタルギフトへ。</h2>
+    </div>
+
+    <div class="step-label">      <span class="sl-title">現状の課題</span>
+    </div>
+    <div class="challenge-boxes">
+      <div class="challenge-box">
+        <span class="cb-mark">✕</span>
+        <div class="cb-title">発送・管理コスト</div>
+        <div class="cb-desc">発送・梱包・管理コストが毎年かかる</div>
+      </div>
+      <div class="challenge-box">
+        <span class="cb-mark">✕</span>
+        <div class="cb-title">株主満足度の低下</div>
+        <div class="cb-desc">使える店舗が限られ、未利用が起きやすい</div>
+      </div>
+      <div class="challenge-box">
+        <span class="cb-mark">✕</span>
+        <div class="cb-title">紛失・破損リスク</div>
+        <div class="cb-desc">紛失や不着時の再発行の手間</div>
+      </div>
+    </div>
+
+    <div class="step-label">      <span class="sl-title">「ネットで優待」3つの導入効果</span>
+    </div>
+    <div class="effect-boxes">
+      <div class="effect-box">
+        <span class="eb-mark">✓</span>
+        <div class="eb-title">コスト大幅削減</div>
+        <div class="eb-desc">発送・梱包・在庫コストを大幅削減</div>
+      </div>
+      <div class="effect-box">
+        <span class="eb-mark">✓</span>
+        <div class="eb-title">株主満足度の向上</div>
+        <div class="eb-desc">普段使いカフェチケットやPayに交換</div>
+      </div>
+      <div class="effect-box">
+        <span class="eb-mark">✓</span>
+        <div class="eb-title">イレギュラー対応</div>
+        <div class="eb-desc">URLの発行対応</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================== SCENE 3：カタログギフト ======================== -->
+  <div class="scenario-panel" id="scene-3">
+    <div class="sc-hero">
+      <span class="sc-badge">カタログギフトで実施中の企業様へ</span>
+      <h2>カタログをデジタルへ移行し、コスト削減と<em>株主満足度向上</em>を両立。</h2>
+    </div>
+
+    <div class="step-label">      <span class="sl-title">現状の課題</span>
+    </div>
+    <div class="challenge-boxes">
+      <div class="challenge-box">
+        <span class="cb-mark">✕</span>
+        <div class="cb-title">コスト上昇</div>
+        <div class="cb-desc">印刷・郵送費が年々上昇している</div>
+      </div>
+      <div class="challenge-box">
+        <span class="cb-mark">✕</span>
+        <div class="cb-title">未利用リスク</div>
+        <div class="cb-desc">好みに合わない商品が多く、未利用になる場合も</div>
+      </div>
+      <div class="challenge-box">
+        <span class="cb-mark">✕</span>
+        <div class="cb-title">クレームリスク</div>
+        <div class="cb-desc">若年層の株主には魅力的な商品が無い</div>
+      </div>
+    </div>
+
+    <div class="step-label">      <span class="sl-title">「ネットで優待」3つの導入効果</span>
+    </div>
+    <div class="effect-boxes">
+      <div class="effect-box">
+        <span class="eb-mark">✓</span>
+        <div class="eb-title">カタログ印刷・郵送費ゼロ</div>
+        <div class="eb-desc">紙カタログのコストを丸ごと削減</div>
+      </div>
+      <div class="effect-box">
+        <span class="eb-mark">✓</span>
+        <div class="eb-title">自社らしさを維持</div>
+        <div class="eb-desc">オリジナルデザインで提供可能</div>
+      </div>
+      <div class="effect-box">
+        <span class="eb-mark">✓</span>
+        <div class="eb-title">誰にでも喜ばれる</div>
+        <div class="eb-desc">自社商品＋約1000種のギフトから選べる</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ======================== ③ 株主利用は簡単 ======================== -->
+  <div class="step-label">    <span class="sl-title">全世代の株主様が、簡単に利用できます。</span>
+  </div>
+  <div class="how-box">
+    <div class="how-flow-3">
+      <div class="how-step-3">
+        <span class="hs-step">STEP 1</span>
+        <span class="hs-icon">✉️</span>
+        <div class="hs-label">案内ハガキを<br>受け取る</div>
+        <div class="hs-sub">QRコード記載</div>
+      </div>
+      <div class="how-arrow">›</div>
+      <div class="how-step-3">
+        <span class="hs-step">STEP 2</span>
+        <span class="hs-icon">📱</span>
+        <div class="hs-label">QRコードを<br>読み込む</div>
+        <div class="hs-sub">株主番号で本人確認</div>
+      </div>
+      <div class="how-arrow">›</div>
+      <div class="how-step-3">
+        <span class="hs-step">STEP 3</span>
+        <span class="hs-icon">🎁</span>
+        <div class="hs-label">ギフトを選んで<br>即時交換</div>
+        <div class="hs-sub">アプリ不要・会員登録不要</div>
+      </div>
+    </div>
+    <div class="how-note">※ スマホに不慣れな株主様でも迷わず使えるよう、徹底的にシンプルに設計されています</div>
+  </div>
+
+  <!-- ======================== ④ ギフトのバリエーション ======================== -->
+  <div class="step-label">    <span class="sl-title" id="products-title">選べるギフトのバリエーション</span>
+  </div>
+
+  <div class="product-cards">
+
+    <!-- giftee Box -->
+    <div class="product-card card-giftee-box">
+      <div class="pc-header">
+        <div>
+          <div class="pc-type">汎用デジタルギフト</div>
+          <div class="pc-name">giftee Box</div>
+        </div>
+      </div>
+      <div class="pc-oneliner">
+        株主が「今欲しいもの」を自由に選べる。コンビニ・カフェ・Amazonなど幅広いブランドから選択できるデジタルギフト。
+      </div>
+      <div class="pc-img-pair">
+        <img class="img-left"
+             src="https://cdn.gcp.giftee.biz/staging/images/uploads/20260426134148821291.png"
+             alt="giftee Box メインイメージ"
+             onerror="this.style.visibility='hidden'">
+        <div class="img-right-wrap">
+          <div class="img-right-label">ラインナップ抜粋</div>
+          <img src="https://cdn.gcp.giftee.biz/staging/images/uploads/20260426134506433365.png"
+               alt="giftee Box ラインナップ"
+               onerror="this.style.visibility='hidden'">
+        </div>
+      </div>
+    </div>
+
+    <!-- えらべるPay -->
+    <div class="product-card card-eraberu-pay">
+      <div class="pc-header">
+        <div>
+          <div class="pc-type">スマホ決済ポイント型ギフト</div>
+          <div class="pc-name">えらべるPay</div>
+        </div>
+      </div>
+      <div class="pc-oneliner">
+        株主が普段使いしているPayやポイントへ自由に交換できるギフト。QUOカードの最適な代替手段。
+      </div>
+      <div class="pc-img-pair">
+        <img class="img-left"
+             src="https://cdn.gcp.giftee.biz/staging/images/uploads/20260426134235390019.png"
+             alt="えらべるPay メインイメージ"
+             onerror="this.style.visibility='hidden'">
+        <div class="img-right-wrap">
+          <div class="img-right-label">ラインナップ抜粋</div>
+          <img src="https://cdn.gcp.giftee.biz/staging/images/uploads/20260426134332002582.png"
+               alt="えらべるPay 詳細説明"
+               onerror="this.style.visibility='hidden'">
+        </div>
+      </div>
+    </div>
+
+    <!-- オリジナル優待カタログギフト（scene3のみ） -->
+    <div class="product-card card-catalog">
+      <div class="pc-header">
+        <div>
+          <div class="pc-type">自社オリジナル型デジタルカタログ</div>
+          <div class="pc-name">オリジナル優待カタログギフト</div>
+        </div>
+      </div>
+      <div class="pc-oneliner">
+        自社ブランドの世界観・自社商品を込めた、完全オーダーメイドのデジタルカタログ。紙カタログと同じ「自社らしい優待」をより低コストで実現。
+      </div>
+      <div class="pc-img-pair">
+        <img class="img-left"
+             src="https://cdn.gcp.giftee.biz/staging/images/uploads/20260426134744398242.png"
+             alt="オリジナル優待カタログギフト"
+             onerror="this.style.visibility='hidden'">
+        <div class="img-right-wrap">
+          <div class="img-right-label">交換商品の一例</div>
+          <img src="https://cdn.gcp.giftee.biz/staging/images/uploads/20260426161523436269.png"
+               alt="オリジナル優待カタログギフト詳細"
+               onerror="this.style.visibility='hidden'">
+        </div>
+      </div>
+    </div>
+
+  </div><!-- /product-cards -->
+
+  <!-- ======================== 次回商談 CTA ======================== -->
+  <div class="sec-div"><div class="sec-div-label">NEXT STEP</div></div>
+  <div class="cta-box">
+    <h2>デジタル優待専門スタッフが、<br>具体的なシミュレーションをお持ちします。</h2>
+    <div class="cta-agenda-label">次回ご案内出来ること</div>
+    <div class="cta-agenda-boxes">
+      <div class="cta-ab">
+        <span class="cta-ab-icon">🎁</span>
+        <div class="cta-ab-title">貴社に最適な<br>優待ギフト</div>
+      </div>
+      <div class="cta-ab">
+        <span class="cta-ab-icon">📊</span>
+        <div class="cta-ab-title">コスト<br>シミュレーション</div>
+      </div>
+      <div class="cta-ab">
+        <span class="cta-ab-icon">📋</span>
+        <div class="cta-ab-title">導入事例</div>
+      </div>
+      <div class="cta-ab">
+        <span class="cta-ab-icon">📅</span>
+        <div class="cta-ab-title">導入スケジュール</div>
+      </div>
+    </div>
+    <div class="cta-contact-box">
+      <div class="cta-contact-label">まずは担当の宝印刷営業へお声がけください</div>
+      <div class="cta-contact-main">デジタル優待専門スタッフとの同席打ち合わせをご手配します</div>
+      <div class="cta-contact-sub">ご連絡から通常1〜2週間以内にご案内可能です</div>
+    </div>
+  </div>
+
+</div><!-- /container -->
+
+<div class="footer">
+  <div class="footer-brand">宝印刷株式会社</div>
+  本資料は「ネットで優待」サービス紹介を目的として宝印刷が作成しています。<br>
+  掲載ブランド・ロゴ等は各社の商標です。サービス仕様は予告なく変更される場合があります。
+</div>
+
+<script>
+function switchScene(num, el) {
+  document.querySelectorAll('.scene-tab').forEach(t => t.classList.remove('active'));
+  el.classList.add('active');
+  document.querySelectorAll('.scenario-panel').forEach(p => p.classList.remove('active'));
+  document.getElementById('scene-' + num).classList.add('active');
+  document.body.className = 'scene-' + num;
+  const t = document.getElementById('products-title');
+  if (t) t.textContent = num === 3 ? 'ご提案する優待品の組み合わせ' : '選べるギフトのバリエーション';
+  const top = document.getElementById('scene-' + num).getBoundingClientRect().top + window.scrollY - 90;
+  setTimeout(() => window.scrollTo({ top: Math.max(0, top), behavior: 'smooth' }), 50);
+}
+</script>
+</body>
+</html>
